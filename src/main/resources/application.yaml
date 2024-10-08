@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: sokhra-Backend-Spring
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://securetoken.google.com/sokhra-5c181
+          jwk-set-uri: https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/sokhra
+    username: root
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+        show_sql: false
+    hibernate:
+      ddl-auto: update
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+#server:
+#  ssl:
+#    key-store: classpath:key-store.jks
+#    key-store-password: password
+#    key-alias: alias
+#  port: 443
+
+profile-picture-directory: sokhra-UsersResources/profile-picture/
+shipment-picture-directory: sokhra-UsersResources/shipment-picture/
+
